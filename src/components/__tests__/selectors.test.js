@@ -1,4 +1,5 @@
-import { getAppointmentsForDay } from "helpers/selectors";
+import { getAppointmentsForDay } from "../../../helpers/selectors";
+
 
 const state = {
   days: [
@@ -29,6 +30,7 @@ const state = {
     }
   }
 };
+
 
 test("getAppointmentsForDay returns an array", () => {
   const result = getAppointmentsForDay(state, "Monday");
