@@ -9,7 +9,8 @@ import Empty from "./Empty";
 const findAppointment = function(props){
   if(props.interview){
     return (
-      <Show 
+      <Show
+      key={props.id} 
       student={props.interview.student}
       interviewer={props.interview.interviewer}
       />
