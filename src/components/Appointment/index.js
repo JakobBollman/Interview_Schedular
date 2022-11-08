@@ -1,5 +1,4 @@
 import React from 'react';
-import { renderHook, act } from '@testing-library/react-hooks/dom';
 import useVisualMode from "hooks/useVisualMode";
 import 'components/Appointment/styles.scss';
 
