@@ -9,10 +9,6 @@ export default function InterviewerListItem(props) {
     'interviewers__item--selected': props.selected === true
   });
 
-  let pName = '';
-  if(props.selected === true){
-    pName = props.name;
-  }
   return (
     <li className={liClass} onClick={props.setInterviewer}>
       <img

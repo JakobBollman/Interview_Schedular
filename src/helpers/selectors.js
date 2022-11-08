@@ -29,3 +29,15 @@ export function getInterview(state, interview) {
     return returnObj;
   }
 }
+
+export function getInterviewersForDay(state, day) {
+  const findDay = state.days.filter(data => data.name === day);
+  if(findDay.length === 0){
+    return [];
+  }
+  let returnArr = [];
+  for(let j = 1; j < Object.keys(state.interviewers).length + 1; j++){
+    returnArr.push(state.interviewers[j]);
+  }
+  return returnArr;
+}
