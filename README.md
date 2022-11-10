@@ -24,4 +24,8 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Screenshots
+!["Main Page"](https://github.com/JakobBollman/Interview_Scheduler/blob/master/docs/Main_Page.png?raw=true)
 !["Application Code"](https://github.com/JakobBollman/Interview_Scheduler/blob/master/docs/Application_Code.png?raw=true)
+
