@@ -1,7 +1,7 @@
 import React from "react";
 import InterviewerListItem from "./InterviewerListItem";
-import PropTypes from 'prop-types'; 
-import 'components/InterviewerList.scss';
+import PropTypes from "prop-types"; 
+import "components/InterviewerList.scss";
 
 function InterviewerList(props) {
   let interProp = props.interviewers;

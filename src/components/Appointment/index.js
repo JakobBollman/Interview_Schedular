@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import useVisualMode from "hooks/useVisualMode";
-import 'components/Appointment/styles.scss';
+import "components/Appointment/styles.scss";
 
 import Header from "./Header";
 import Show from "./Show";
 import Empty from "./Empty";
-import Form from './Form';
-import Status from './Status';
-import Confirm from './Confirm';
-import Error from './Error';
+import Form from "./Form";
+import Status from "./Status";
+import Confirm from "./Confirm";
+import Error from "./Error";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -81,22 +81,22 @@ export default function Appointment(props) {
           interviewer={props.interview && props.interview.interviewer.id}
           interviewers={props.interviewers}
       />)}
-      {mode === SAVING && <Status message='Saving...'/>}
-      {mode === DELETE && <Status message='Deleting...'/>}
+      {mode === SAVING && <Status message="Saving..."/>}
+      {mode === DELETE && <Status message="Deleting..."/>}
 
       {mode === ERROR_DELETE && (
         <Error 
-          message='Could Not Delete Appointment.'
+          message="Could Not Delete Appointment."
           onClose={back}  
       />)}
       {mode === ERROR_SAVE && (
         <Error 
-          message='Could Not Save Appointment.'
+          message="Could Not Save Appointment."
           onClose={back}  
       />)}
       {mode === CONFIRM && (
       <Confirm 
-        message='Delete the Appointment?'
+        message="Delete the Appointment?"
         onConfirm={() => ondelete(props.id)} 
         onCancel={back}
       />)}
