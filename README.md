@@ -28,4 +28,5 @@ npm run storybook
 ## Screenshots
 !["Main Page"](https://github.com/JakobBollman/Interview_Scheduler/blob/master/docs/Main_Page.png?raw=true)
 !["Application Code"](https://github.com/JakobBollman/Interview_Scheduler/blob/master/docs/Application_Code.png?raw=true)
-
+!["Find and Filter Data"](https://github.com/JakobBollman/Interview_Scheduler/blob/master/docs/Find_Filter_Data.png?raw=true)
+![""]()
