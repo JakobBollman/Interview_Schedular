@@ -3,6 +3,9 @@
 ## Setup
 
 Install dependencies with `npm install`.
+-Axios
+-@testing-library/react-hooks
+-react-test-renderer
 
 ## Running Webpack Development Server
 
