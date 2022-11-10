@@ -24,4 +24,3 @@ npm test
 ```sh
 npm run storybook
 ```
-https://github.com/JakobBollman/Interview_Scheduler/blob/master/docs/Application_Code.png?raw=true
