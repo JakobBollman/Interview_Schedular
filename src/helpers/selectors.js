@@ -31,13 +31,23 @@ export function getInterview(state, interview) {
 }
 
 export function getInterviewersForDay(state, day) {
+  
   const findDay = state.days.filter(data => data.name === day);
   if(findDay.length === 0){
     return [];
   }
   let returnArr = [];
-  for(let j = 1; j < 6; j++){
-    returnArr.push(state.interviewers[j]);
+
+  for(let item of findDay[0].interviewers){
+    for(let j = 1; j < item + 1; j++){
+      if(item === state.interviewers[j].id){
+        returnArr.push(state.interviewers[j]);
+      }
+    }
   }
+
+  //for(let j = 1; j < Object.keys(state.interviewers).length + 1; j++){
+  //  returnArr.push(state.interviewers[j]);
+  //}
   return returnArr;
 }

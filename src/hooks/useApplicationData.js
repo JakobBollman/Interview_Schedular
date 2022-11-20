@@ -11,6 +11,7 @@ export default function useApplicationData(props) {
 
   const setDay = day => setState({ ...state, day });
 
+  //Call the API for the appointment data then set it to the states
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
