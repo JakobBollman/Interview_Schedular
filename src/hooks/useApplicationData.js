@@ -22,6 +22,7 @@ export default function useApplicationData(props) {
     });
   },[]);
 
+  //Learns how many spots left in each day
   function calcSpots(state, appointments){
     return state.days.map((day) => {
       if(day.name === state.day) {
@@ -35,6 +36,7 @@ export default function useApplicationData(props) {
     });
   }
 
+  //Adds new interview into day
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -50,6 +52,7 @@ export default function useApplicationData(props) {
     }));
   }
 
+  //Removes selected interview from day
   function cancelInterview(id){
     const appointment = {
       ...state.appointments[id],

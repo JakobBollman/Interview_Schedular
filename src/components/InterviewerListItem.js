@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import "components/InterviewerListItem.scss";
 
+//Display Interviewer Icon / name
 export default function InterviewerListItem(props) {
   let liClass = classNames({
     "interviewers__item": true,

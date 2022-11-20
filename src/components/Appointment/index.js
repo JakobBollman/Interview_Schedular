@@ -21,7 +21,7 @@ const CONFIRM = "CONFIRM";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 
-
+//Appointment component that creates all the component changing logic 
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -41,16 +41,22 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_SAVE, true));
   }
 
-  function ondelete(id){
-    transition(DELETE, true);
-    props
-      .cancelInterview(id)
-      .then(() => transition(EMPTY))
-      .catch(error => transition(ERROR_DELETE, true));
+  function undoSave() {
+    props.cancelInterview(props.id)
+    back();
   }
 
-  //props.cancelInterview(id);
-  //transition()
+  function undoDelete() {
+    back();
+  }
+
+  function ondelete(name, interviewer) { 
+    transition(DELETE, true);
+    props
+      .cancelInterview(props.id)
+      .then(() => transition(EMPTY))
+      .catch(error => transition(ERROR_DELETE, true));
+   }
 
   return (
     <article className="appointment" data-testid="appointment">
@@ -87,17 +93,18 @@ export default function Appointment(props) {
       {mode === ERROR_DELETE && (
         <Error 
           message="Could Not Delete Appointment."
-          onClose={back}  
+          onClose={undoDelete}  
       />)}
       {mode === ERROR_SAVE && (
         <Error 
           message="Could Not Save Appointment."
-          onClose={back}  
+          onClose={undoSave}  
       />)}
       {mode === CONFIRM && (
       <Confirm 
         message="Delete the Appointment?"
-        onConfirm={() => ondelete(props.id)} 
+        interviewer={props.interview && props.interview.interviewer.id}
+        onConfirm={(student, interviewer) => ondelete(student, interviewer)} 
         onCancel={back}
       />)}
     </article>

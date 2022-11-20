@@ -1,5 +1,6 @@
 import React from "react";
 
+//Appointment component that displays in between thinking messages (Deleting...)
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">

@@ -8,6 +8,7 @@ import Appointment from "./Appointment/index";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
+//Main driver for all of the Appointment information and most of the HTML 
 export default function Application() {
   const {
     state,

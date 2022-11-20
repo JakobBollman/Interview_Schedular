@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
-
+//Appointment component that allows the user to edit or save new data to an appointment slot
 export default function Form(props) {
 
   const [student, setStudent] = useState(props.student || "");

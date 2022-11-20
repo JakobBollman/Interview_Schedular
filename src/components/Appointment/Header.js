@@ -1,5 +1,6 @@
 import React from "react";
 
+//Appointment component that displays time brackets between interviews
 export default function Header(props) {
   return (
     <header className="appointment__time">

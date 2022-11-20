@@ -3,6 +3,7 @@ import InterviewerListItem from "./InterviewerListItem";
 import PropTypes from "prop-types"; 
 import "components/InterviewerList.scss";
 
+//Displays List of InterviewerItems (Icons / names)
 function InterviewerList(props) {
   let interProp = props.interviewers;
   const interviewers = interProp.map((interviewer) => {

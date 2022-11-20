@@ -2,6 +2,7 @@ import React from "react";
 
 import DayListItem from "components/DayListItem";
 
+//Displays all of the DaylistItems in a row
 export default function DayList(props) {
   let daysProp = props.days;
   const listItems = daysProp.map(DLI => {

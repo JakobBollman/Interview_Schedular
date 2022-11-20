@@ -13,6 +13,7 @@ const formatSpots = function(spots){
   }
 }
 
+// Displays a Day Item with Name and spots left
 export default function DayListItem(props) {
   let liClass = classNames({
     "day-list__item": true,

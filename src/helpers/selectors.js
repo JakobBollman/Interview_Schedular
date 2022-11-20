@@ -1,3 +1,4 @@
+//Finds which appointments should be displayed in the selected day
 export function getAppointmentsForDay(state, day) {
   const findDay = state.days.filter(data => data.name === day);
   if(findDay.length === 0){
@@ -14,6 +15,7 @@ export function getAppointmentsForDay(state, day) {
   return returnArr;
 }
 
+//Finds the requested interview
 export function getInterview(state, interview) {
   if(interview == null){
     return null;
@@ -30,6 +32,7 @@ export function getInterview(state, interview) {
   }
 }
 
+//Finds the correct Interviewers based off of the day
 export function getInterviewersForDay(state, day) {
   
   const findDay = state.days.filter(data => data.name === day);
@@ -45,9 +48,5 @@ export function getInterviewersForDay(state, day) {
       }
     }
   }
-
-  //for(let j = 1; j < Object.keys(state.interviewers).length + 1; j++){
-  //  returnArr.push(state.interviewers[j]);
-  //}
   return returnArr;
 }

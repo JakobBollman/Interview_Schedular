@@ -2,6 +2,7 @@ import React from "react";
 
 import Button from "components/Button";
 
+//Appointment component that displays a prompt for a second check of the user
 export default function Confirm(props) {
   return (
     <main className="appointment__card appointment__card--confirm">
