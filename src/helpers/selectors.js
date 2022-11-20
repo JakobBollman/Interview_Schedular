@@ -36,7 +36,7 @@ export function getInterviewersForDay(state, day) {
     return [];
   }
   let returnArr = [];
-  for(let j = 1; j < Object.keys(state.interviewers).length + 1; j++){
+  for(let j = 1; j < 6; j++){
     returnArr.push(state.interviewers[j]);
   }
   return returnArr;
