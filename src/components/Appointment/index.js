@@ -28,40 +28,37 @@ export default function Appointment(props) {
   );
 
   function save(name, interviewer) {
+
     const interview = {
       student: name,
       interviewer
     };
-  
+
     transition(SAVING, true);
-  
+
     props
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true));
+
   }
 
-  function undoSave() {
-    props.cancelInterview(props.id)
-    back();
-  }
+  
 
-  function undoDelete() {
-    back();
-  }
+  function ondelete() {
 
-  function ondelete(name, interviewer) { 
     transition(DELETE, true);
+
     props
       .cancelInterview(props.id)
       .then(() => transition(EMPTY))
       .catch(error => transition(ERROR_DELETE, true));
+
    }
 
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time}/>
-      {/*findAppointment(props)*/}
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
         <Show
@@ -93,18 +90,18 @@ export default function Appointment(props) {
       {mode === ERROR_DELETE && (
         <Error 
           message="Could Not Delete Appointment."
-          onClose={undoDelete}  
+          onClose={back}  
       />)}
       {mode === ERROR_SAVE && (
         <Error 
           message="Could Not Save Appointment."
-          onClose={undoSave}  
+          onClose={back}  
       />)}
       {mode === CONFIRM && (
       <Confirm 
         message="Delete the Appointment?"
         interviewer={props.interview && props.interview.interviewer.id}
-        onConfirm={(student, interviewer) => ondelete(student, interviewer)} 
+        onConfirm={ondelete} 
         onCancel={back}
       />)}
     </article>
